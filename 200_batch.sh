@@ -2,8 +2,6 @@ collection=$1
 id=$2
 silent=$3
 
-echo $id : $collection
-
 echo "001_create_list.py"
 python 001_create_list.py --silent $silent $collection $id
 

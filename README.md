@@ -26,4 +26,10 @@ sh 201_batches.sh
 
 ## データセットの追加
 
-`201_batches.sh` を編集してください。
+`settings.yml` を編集し、以下を実行してください。
+
+```
+python 300_create_batch.py
+```
+`201_batches.sh` が更新されます。
+
