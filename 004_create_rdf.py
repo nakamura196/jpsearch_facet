@@ -53,8 +53,6 @@ for i in range(len(files)):
         graphId = graph["@id"]
         graphMap[graphId] = graph
 
-    print(id)
-
     for graphId in graphMap:
 
         graph = graphMap[graphId]
