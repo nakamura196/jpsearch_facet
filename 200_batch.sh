@@ -12,10 +12,10 @@ python 002_downloader.py --silent $silent $id
 # python 003_get_es.py --silent $silent $id
 
 echo "004_create_rdf.py"
-python 004_create_rdf.py --silent $silent $id
+python 004_create_rdf.py --silent $silent --skip False $id
 
 echo "005_entites.py"
 python 005_entities.py --silent $silent $id
 
 echo "006_mod_rdf.py"
-python 006_mod_rdf.py --silent $silent $id
+python 006_mod_rdf.py --silent $silent --skip False $id

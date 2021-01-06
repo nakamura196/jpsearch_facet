@@ -6,6 +6,7 @@ import time
 import sys
 import csv
 import argparse    # 1. argparseをインポート
+import os
 
 parser = argparse.ArgumentParser(description='このプログラムの説明（なくてもよい）')    # 2. パーサを作る
 
@@ -76,8 +77,12 @@ while (flg):
 
     # break
 
+path = "data/001_csv/"+filename+".csv"
 
-f = open("data/001_csv/"+filename+".csv", 'w')
+dirname = os.path.dirname(path)
+os.makedirs(dirname, exist_ok=True)
+
+f = open(path, 'w')
 
 writer = csv.writer(f, lineterminator='\n')
 writer.writerows(rows)

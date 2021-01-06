@@ -90,7 +90,10 @@ for i in range(len(files)):
                     "http://schema.org/contributor": "agential",
                     "http://schema.org/temporal": "temporal",
                     "http://schema.org/spatial": "spatial",
-                    "http://schema.org/inLanguage": "inLanguage"
+                    "http://schema.org/inLanguage": "inLanguage",
+                    "http://schema.org/about": "about",
+                    "http://schema.org/category": "category",
+                    "http://schema.org/relatedLink": "relatedLink"
                 }
 
                 for p in properteis:

@@ -11,7 +11,7 @@ with open('settings.yml') as file:
     
     count = 1
     for key in obj:
-        lines.append("echo {} / {} {} : {}".format(count, size, key, obj[key]))
+        lines.append("echo {}/{} {}: {}".format(count, size, key, obj[key]))
         lines.append("sh 200_batch.sh {} {} True".format(obj[key], key))
 
         count += 1
