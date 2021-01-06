@@ -8,17 +8,19 @@ import time
 import json
 import glob
 
-parser = argparse.ArgumentParser(description='このプログラムの説明（なくてもよい）')    # 2. パーサを作る
+parser = argparse.ArgumentParser(
+    description='このプログラムの説明（なくてもよい）')    # 2. パーサを作る
 
 # 3. parser.add_argumentで受け取る引数を追加していく
 parser.add_argument('filename', help='ファイル名')    # 必須の引数を追加
-parser.add_argument('skip_flg', help='True or False')
-
+parser.add_argument('--skip', help='True or False')
+parser.add_argument('--silent', help='True or False, Default False')
 args = parser.parse_args()    # 4. 引数を解析
 
-skip_flg = True if args.skip_flg == "True" else False
-
 path = "data/002_json/"+args.filename+"/*.json"
+
+skip_flg = False if args.skip != None and args.skip != "True" else True
+silent_flg = True if args.silent == "True" else False
 
 files = glob.glob(path)
 
@@ -27,7 +29,7 @@ for i in range(len(files)):
 
     id = file.split("/")[-1].split(".")[0]
 
-    if i % 100 == 0:
+    if i % 100 == 0 and not silent_flg:
         print(i+1, len(files), id)
 
     prefix = id.split("-")[0]
@@ -57,8 +59,8 @@ for i in range(len(files)):
 
                 fw = open(opath, 'w')
                 json.dump(results, fw, ensure_ascii=False, indent=4,
-                    sort_keys=True, separators=(',', ': '))
+                          sort_keys=True, separators=(',', ': '))
             except Exception as e:
                 time.sleep(1)
-                print("Error", name, e)
+                print("Error", id, e)
                 continue

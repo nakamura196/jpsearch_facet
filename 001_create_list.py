@@ -12,7 +12,7 @@ parser = argparse.ArgumentParser(description='このプログラムの説明（�
 # 3. parser.add_argumentで受け取る引数を追加していく
 parser.add_argument('collections', help='chname以下の文字列を指定')    # 必須の引数を追加
 parser.add_argument('filename', help='出力ファイル名')    # 必須の引数を追加
-
+parser.add_argument('--silent', help='True or False, Default False')
 args = parser.parse_args()    # 4. 引数を解析
 
 collections_str = args.collections
@@ -23,6 +23,7 @@ else:
     target = "https://jpsearch.go.jp/entity/chname/"+collections_str
 
 filename = args.filename
+silent_flg = True if args.silent == "True" else False
 
 flg = True
 
@@ -39,7 +40,8 @@ sparql = SPARQLWrapper(endpoint=endpoint, returnFormat='json')
 
 while (flg):
 
-    print("page", page)
+    if not silent_flg:
+        print("page", page)
 
     # time.sleep(1)
 

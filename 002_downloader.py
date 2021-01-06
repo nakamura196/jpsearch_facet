@@ -12,7 +12,8 @@ parser = argparse.ArgumentParser(description='このプログラムの説明（�
 
 # 3. parser.add_argumentで受け取る引数を追加していく
 parser.add_argument('filename', help='ファイル名')    # 必須の引数を追加
-parser.add_argument('skip_flg', help='True or False')
+parser.add_argument('--skip', help='True or False, Default True')
+parser.add_argument('--silent', help='True or False, Default False')
 
 args = parser.parse_args()    # 4. 引数を解析
 
@@ -25,7 +26,8 @@ query = """
 
 endpoint_url = "https://jpsearch.go.jp/rdf/sparql"
 
-skip_flg = True if args.skip_flg == "True" else False
+skip_flg = False if args.skip != None and args.skip != "True" else True
+silent_flg = True if args.silent == "True" else False
 
 list_path = "data/001_csv/"+args.filename+".csv"
 
@@ -45,7 +47,7 @@ with open(list_path, 'r') as f:
         
         name = uri.split("/")[-1]
 
-        if i % 100 == 0:
+        if i % 100 == 0 and not silent_flg:
             print(i+1, len(uris), name)
 
         prefix = name.split("-")[0]

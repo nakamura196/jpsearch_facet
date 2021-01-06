@@ -8,15 +8,18 @@ import time
 import json
 import glob
 
-parser = argparse.ArgumentParser(description='このプログラムの説明（なくてもよい）')    # 2. パーサを作る
+parser = argparse.ArgumentParser(
+    description='このプログラムの説明（なくてもよい）')    # 2. パーサを作る
 
 # 3. parser.add_argumentで受け取る引数を追加していく
 parser.add_argument('filename', help='ファイル名')    # 必須の引数を追加
-parser.add_argument('skip_flg', help='True or False')
+parser.add_argument('--skip', help='True or False')
+parser.add_argument('--silent', help='True or False, Default False')
 
 args = parser.parse_args()    # 4. 引数を解析
 
-skip_flg = True if args.skip_flg == "True" else False
+skip_flg = False if args.skip != None and args.skip != "True" else True
+silent_flg = True if args.silent == "True" else False
 
 path = "data/002_json/"+args.filename+"/*.json"
 
@@ -27,7 +30,7 @@ for i in range(len(files)):
 
     id = file.split("/")[-1].split(".")[0]
 
-    if i % 100 == 0:
+    if i % 100 == 0 and not silent_flg:
         print(i+1, len(files), id)
 
     prefix = id.split("-")[0]
@@ -49,7 +52,7 @@ for i in range(len(files)):
     for graph in graphs:
         graphId = graph["@id"]
         graphMap[graphId] = graph
-    
+
     for graphId in graphMap:
 
         graph = graphMap[graphId]
@@ -62,28 +65,36 @@ for i in range(len(files)):
                 map["access"] = [graph["http://schema.org/provider"]["@id"]]
 
                 if "http://schema.org/itemLocation" in graph:
-                    map["itemLocation"] = [graph["http://schema.org/itemLocation"]["@id"]]
-                
+                    map["itemLocation"] = [
+                        graph["http://schema.org/itemLocation"]["@id"]]
+
                 if "http://schema.org/license" in graph:
                     map["license"] = [graph["http://schema.org/license"]["@id"]]
             else:
                 if "http://schema.org/isPartOf" in graph:
-                    map["isPartOf"] = [graph["http://schema.org/isPartOf"]["@id"]]
+                    uris = []
+                    values = graph["http://schema.org/isPartOf"]
+                    if type(values) is not list:
+                        values = [values]
+                    for value in values:
+                        uris.append(value["@id"])
+
+                    map["isPartOf"] = uris
 
                 if "@type" in graph:
                     map["type"] = [graph["@type"]]
 
                 properteis = {
-                    "http://schema.org/creator" : "agential",
-                    "http://schema.org/publisher" : "agential",
-                    "http://schema.org/contributor" : "agential",
-                    "http://schema.org/temporal" : "temporal",
-                    "http://schema.org/spatial" : "spatial",
-                    "http://schema.org/inLanguage" : "inLanguage"
+                    "http://schema.org/creator": "agential",
+                    "http://schema.org/publisher": "agential",
+                    "http://schema.org/contributor": "agential",
+                    "http://schema.org/temporal": "temporal",
+                    "http://schema.org/spatial": "spatial",
+                    "http://schema.org/inLanguage": "inLanguage"
                 }
 
                 for p in properteis:
-                    
+
                     if p in graph:
 
                         es_field = properteis[p]
@@ -100,8 +111,8 @@ for i in range(len(files)):
     try:
         fw = open(opath, 'w')
         json.dump(map, fw, ensure_ascii=False, indent=4,
-            sort_keys=True, separators=(',', ': '))
+                  sort_keys=True, separators=(',', ': '))
     except Exception as e:
         time.sleep(1)
-        print("Error", name, e)
+        print("Error", id, e)
         continue

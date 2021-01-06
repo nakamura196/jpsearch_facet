@@ -10,15 +10,18 @@ import glob
 import hashlib
 from SPARQLWrapper import SPARQLWrapper
 
-parser = argparse.ArgumentParser(description='このプログラムの説明（なくてもよい）')    # 2. パーサを作る
+parser = argparse.ArgumentParser(
+    description='このプログラムの説明（なくてもよい）')    # 2. パーサを作る
 
 # 3. parser.add_argumentで受け取る引数を追加していく
 parser.add_argument('filename', help='ファイル名')    # 必須の引数を追加
-parser.add_argument('skip_flg', help='True or False')
+parser.add_argument('--skip', help='True or False')
+parser.add_argument('--silent', help='True or False, Default False')
 
 args = parser.parse_args()    # 4. 引数を解析
 
-skip_flg = True if args.skip_flg == "True" else False
+skip_flg = False if args.skip != None and args.skip != "True" else True
+silent_flg = True if args.silent == "True" else False
 
 prefix = args.filename
 
@@ -45,7 +48,7 @@ sparql = SPARQLWrapper(endpoint=endpoint, returnFormat='json')
 for i in range(len(uris)):
     uri = sorted(uris)[i]
 
-    if i % 100 == 0:
+    if i % 100 == 0 and not skip_flg:
         print(i+1, len(uris), uri)
 
     hash = hashlib.md5(uri.encode('utf-8')).hexdigest()
@@ -62,19 +65,18 @@ for i in range(len(uris)):
         PREFIX jps: <https://jpsearch.go.jp/term/property#>
         PREFIX schema: <http://schema.org/>
         select * where {
-            <""" +uri+ """> ?p ?o
+            <""" + uri + """> ?p ?o
         }
     """)
 
     sparql.setQuery(q)
 
-    url = endpoint+"?query="+urllib.parse.quote(q)+"&format=json&output=json&results=json"
+    url = endpoint+"?query=" + \
+        urllib.parse.quote(q)+"&format=json&output=json&results=json"
 
     result = requests.get(url).json()
 
     result = result["results"]["bindings"]
-
-    
 
     resultMap = {}
 
@@ -86,7 +88,7 @@ for i in range(len(uris)):
             resultMap[p] = []
 
         value = {
-            "value" : o,
+            "value": o,
         }
 
         # 言語情報
@@ -124,7 +126,7 @@ for i in range(len(uris)):
     try:
         fw = open(opath, 'w')
         json.dump(entity, fw, ensure_ascii=False, indent=4,
-            sort_keys=True, separators=(',', ': '))
+                  sort_keys=True, separators=(',', ': '))
         fw.close()
     except Exception as e:
         time.sleep(1)

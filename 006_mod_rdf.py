@@ -10,15 +10,18 @@ import glob
 import hashlib
 from SPARQLWrapper import SPARQLWrapper
 
-parser = argparse.ArgumentParser(description='このプログラムの説明（なくてもよい）')    # 2. パーサを作る
+parser = argparse.ArgumentParser(
+    description='このプログラムの説明（なくてもよい）')    # 2. パーサを作る
 
 # 3. parser.add_argumentで受け取る引数を追加していく
 parser.add_argument('filename', help='ファイル名')    # 必須の引数を追加
-parser.add_argument('skip_flg', help='True or False')
+parser.add_argument('--skip', help='True or False')
+parser.add_argument('--silent', help='True or False, Default False')
 
 args = parser.parse_args()    # 4. 引数を解析
 
-skip_flg = True if args.skip_flg == "True" else False
+skip_flg = False if args.skip != None and args.skip != "True" else True
+silent_flg = True if args.silent == "True" else False
 
 prefix = args.filename
 
@@ -45,7 +48,7 @@ entities = {}
 for i in range(len(uris)):
     uri = sorted(uris)[i]
 
-    if i % 100 == 0:
+    if i % 100 == 0 and not silent_flg:
         print(i+1, len(uris), uri)
 
     hash = hashlib.md5(uri.encode('utf-8')).hexdigest()
@@ -60,7 +63,7 @@ for i in range(len(uris)):
         df = json.load(f)
 
     entities[hash] = df
-    
+
 for file in files:
 
     id = file.split("/")[-1].split(".")[0]
@@ -78,11 +81,11 @@ for file in files:
     with open(file) as f:
         df = json.load(f)
 
-    fields = ["access", "source", "agential", 
-    "spatial", "temporal", "itemLocation", 
-    "inLanguage", "type", "isPartOf", 
-    # "license"
-    ]
+    fields = ["access", "source", "agential",
+              "spatial", "temporal", "itemLocation",
+              "inLanguage", "type", "isPartOf",
+              # "license"
+              ]
 
     for field in fields:
 
@@ -96,7 +99,7 @@ for file in files:
         item[field+"_uri"] = []
 
         for value in values:
-        
+
             hash = hashlib.md5(value.encode('utf-8')).hexdigest()
 
             if hash not in entities:
@@ -104,10 +107,13 @@ for file in files:
                 continue
 
             entity = entities[hash]
-            
+
             # コレクションの判定
             if field == "isPartOf":
                 collectionFlag = False
+                if "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" not in entity:
+                    continue
+
                 types = entity["http://www.w3.org/1999/02/22-rdf-syntax-ns#type"]
                 for t in types:
                     if t["value"] == "http://schema.org/Collection":
@@ -115,7 +121,6 @@ for file in files:
 
                 if not collectionFlag:
                     continue
-                    
 
             item[field+"_ja"].append(entity["ja"])
             item[field+"_en"].append(entity["en"])
@@ -124,7 +129,7 @@ for file in files:
     try:
         fw = open(opath, 'w')
         json.dump(item, fw, ensure_ascii=False, indent=4,
-            sort_keys=True, separators=(',', ': '))
+                  sort_keys=True, separators=(',', ': '))
     except Exception as e:
         time.sleep(1)
         print("Error", uri, e)
