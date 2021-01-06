@@ -39,7 +39,7 @@ sparql = SPARQLWrapper(endpoint=endpoint, returnFormat='json')
 
 while (flg):
 
-    print(page)
+    print("page", page)
 
     # time.sleep(1)
 
@@ -67,16 +67,9 @@ while (flg):
 
     page += 1
 
-
-
     for i in range(len(results["results"]["bindings"])):
-
         obj = results["results"]["bindings"][i]
-
-        if i == 0:
-            print(obj["cho"]["value"])
         cho = obj["cho"]["value"]
-
         rows.append([cho])
 
     # break

@@ -74,7 +74,7 @@ for i in range(len(uris)):
 
     result = result["results"]["bindings"]
 
-    label = ""
+    
 
     resultMap = {}
 
@@ -95,11 +95,14 @@ for i in range(len(uris)):
 
         resultMap[p].append(value)
 
-    
+    label = ""
 
     if "http://www.w3.org/2000/01/rdf-schema#label" in resultMap:
         label = resultMap["http://www.w3.org/2000/01/rdf-schema#label"][0]["value"]
 
+    # ラベルがない場合には、ローカル値を利用
+    if label == "":
+        label = uri.split("/")[-1]
 
     label_en = ""
     if "http://schema.org/name" in resultMap:
