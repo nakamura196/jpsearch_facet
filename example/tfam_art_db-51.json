@@ -1,0 +1,56 @@
+{
+    "access_en": [
+        "Tokyo Fuji Art Museum"
+    ],
+    "access_ja": [
+        "東京富士美術館"
+    ],
+    "access_uri": [
+        "https://jpsearch.go.jp/entity/chname/東京富士美術館"
+    ],
+    "agential_en": [
+        "Breanski, Alfred de"
+    ],
+    "agential_ja": [
+        "アルフレッド・ド・ブリアンスキー"
+    ],
+    "agential_uri": [
+        "https://jpsearch.go.jp/entity/chname/アルフレッド・ド・ブリアンスキー"
+    ],
+    "source_en": [
+        "Tokyo Fuji Art Museum Collection Database"
+    ],
+    "source_ja": [
+        "東京富士美術館収蔵品データベース"
+    ],
+    "source_uri": [
+        "https://jpsearch.go.jp/entity/chname/東京富士美術館収蔵品データベース"
+    ],
+    "spatial_en": [
+        "United Kingdom"
+    ],
+    "spatial_ja": [
+        "イギリス"
+    ],
+    "spatial_uri": [
+        "https://jpsearch.go.jp/entity/place/イギリス"
+    ],
+    "temporal_en": [
+        "1878"
+    ],
+    "temporal_ja": [
+        "1878年"
+    ],
+    "temporal_uri": [
+        "https://jpsearch.go.jp/entity/time/1878"
+    ],
+    "type_en": [
+        "Painting"
+    ],
+    "type_ja": [
+        "絵画"
+    ],
+    "type_uri": [
+        "https://jpsearch.go.jp/term/type/絵画"
+    ]
+}

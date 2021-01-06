@@ -49,3 +49,5 @@ python 300_create_batch.py
 | schema:category | category |
 | schema:relatedLink | relatedLink |
 | jps:era | era |
+
+出力例は `example` フォルダにあります。

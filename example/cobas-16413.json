@@ -1,0 +1,65 @@
+{
+    "access_en": [
+        "Nara National Museum"
+    ],
+    "access_ja": [
+        "奈良国立博物館"
+    ],
+    "access_uri": [
+        "https://jpsearch.go.jp/entity/chname/奈良国立博物館"
+    ],
+    "era_en": [
+        "-453"
+    ],
+    "era_ja": [
+        "中国・戦国時代"
+    ],
+    "era_uri": [
+        "https://jpsearch.go.jp/entity/time/中国戦国時代"
+    ],
+    "itemLocation_en": [
+        "Nara"
+    ],
+    "itemLocation_ja": [
+        "奈良県"
+    ],
+    "itemLocation_uri": [
+        "https://jpsearch.go.jp/entity/place/奈良"
+    ],
+    "source_en": [
+        "Integrated Collections Database of the National Museums, Japan"
+    ],
+    "source_ja": [
+        "国立博物館所蔵品統合検索システム"
+    ],
+    "source_uri": [
+        "https://jpsearch.go.jp/entity/chname/ColBase"
+    ],
+    "spatial_en": [
+        "China"
+    ],
+    "spatial_ja": [
+        "中国"
+    ],
+    "spatial_uri": [
+        "https://jpsearch.go.jp/entity/place/中国"
+    ],
+    "temporal_en": [
+        "500BCE-201BCE"
+    ],
+    "temporal_ja": [
+        "前5～前3世紀"
+    ],
+    "temporal_uri": [
+        "https://jpsearch.go.jp/entity/time/0500BCE-0201BCE"
+    ],
+    "type_en": [
+        "Archaeology Material"
+    ],
+    "type_ja": [
+        "考古"
+    ],
+    "type_uri": [
+        "https://jpsearch.go.jp/term/type/考古"
+    ]
+}
