@@ -53,16 +53,19 @@ for i in range(len(files)):
         graphId = graph["@id"]
         graphMap[graphId] = graph
 
+    print(id)
+
     for graphId in graphMap:
 
         graph = graphMap[graphId]
 
         if id in graphId:
             if "#sourceinfo" in graphId:
-
-                map["source"] = [graph["http://schema.org/provider"]["@id"]]
+                if "http://schema.org/provider" in graph:
+                    map["source"] = [graph["http://schema.org/provider"]["@id"]]
             elif "#accessinfo" in graphId:
-                map["access"] = [graph["http://schema.org/provider"]["@id"]]
+                if "http://schema.org/provider" in graph:
+                    map["access"] = [graph["http://schema.org/provider"]["@id"]]
 
                 if "http://schema.org/itemLocation" in graph:
                     map["itemLocation"] = [
