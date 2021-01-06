@@ -84,7 +84,7 @@ for file in files:
     fields = ["access", "source", "agential",
               "spatial", "temporal", "itemLocation",
               "inLanguage", "type", "isPartOf",
-              "category", "relatedLink"
+              "category", "relatedLink", "era"
               # "license"
               ]
 

@@ -39,6 +39,13 @@ with open(list_path, 'r') as f:
 
     for row in reader:
         uri = row[0]
+
+        '''
+        # テスト用
+        if "cobas-16413" not in uri:
+            continue
+        '''
+
         uris.append(uri)
 
     for i in range(len(uris)):

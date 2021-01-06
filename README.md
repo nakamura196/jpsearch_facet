@@ -33,3 +33,19 @@ python 300_create_batch.py
 ```
 `201_batches.sh` が更新されます。
 
+## 説明
+
+出力ファイルの項目は以下の通りです。
+
+| 利活用スキーマ | 出力項目  |
+| :---:   | :-: |
+| jps:agential | agential |
+| schema:spatial | spatial |
+| schema:temporal | tempral |
+| schema:itemLocation | itemLocation |
+| schema:inLanguage | inLanguage |
+| rdf:type | type |
+| schema:isPartOf | isPartOf |
+| schema:category | category |
+| schema:relatedLink | relatedLink |
+| jps:era | era |

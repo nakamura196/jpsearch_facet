@@ -111,6 +111,26 @@ for i in range(len(files)):
                         for value in values:
                             map[es_field].append(value["@id"])
 
+                # 時代
+
+                if "https://jpsearch.go.jp/term/property#temporal" in graph:
+                    eras = []
+                    values = graph["https://jpsearch.go.jp/term/property#temporal"]
+                    if type(values) is not list:
+                        values = [values]
+                    for value in values:
+                        uri = value["@id"]
+                        anotherGraph = graphMap[uri]
+                        if "https://jpsearch.go.jp/term/property#era" in anotherGraph:
+                            values2 = anotherGraph["https://jpsearch.go.jp/term/property#era"]
+                            if type(values2) is not list:
+                                values2 = [values2]
+                                for value2 in values2:
+                                    eras.append(value2["@id"])
+
+                    if len(eras) > 0:
+                        map["era"] = eras
+
     try:
         fw = open(opath, 'w')
         json.dump(map, fw, ensure_ascii=False, indent=4,
