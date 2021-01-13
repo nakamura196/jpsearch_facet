@@ -128,8 +128,12 @@ for file in files:
             item[field+"_uri"].append(entity["uri"])
 
     try:
+        result = {
+            "id" : id,
+            "rdf" : item
+        }
         fw = open(opath, 'w')
-        json.dump(item, fw, ensure_ascii=False, indent=4,
+        json.dump(result, fw, ensure_ascii=False, indent=4,
                   sort_keys=True, separators=(',', ': '))
     except Exception as e:
         time.sleep(1)

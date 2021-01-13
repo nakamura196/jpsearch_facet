@@ -1,68 +1,71 @@
 {
-    "access_en": [
-        "Aomori Prefectural Library"
-    ],
-    "access_ja": [
-        "青森県立図書館"
-    ],
-    "access_uri": [
-        "https://jpsearch.go.jp/entity/chname/青森県立図書館"
-    ],
-    "agential_en": [
-        "田中唯五郎(佳政)",
-        "小林宗五郎"
-    ],
-    "agential_ja": [
-        "田中唯五郎(佳政)",
-        "小林宗五郎"
-    ],
-    "agential_uri": [
-        "https://jpsearch.go.jp/entity/ncname/田中唯五郎(佳政)",
-        "https://jpsearch.go.jp/entity/ncname/小林宗五郎"
-    ],
-    "inLanguage_en": [
-        "Japanese"
-    ],
-    "inLanguage_ja": [
-        "日本語"
-    ],
-    "inLanguage_uri": [
-        "http://id.loc.gov/vocabulary/iso639-2/jpn"
-    ],
-    "itemLocation_en": [
-        "Aomori"
-    ],
-    "itemLocation_ja": [
-        "青森県"
-    ],
-    "itemLocation_uri": [
-        "https://jpsearch.go.jp/entity/place/青森"
-    ],
-    "source_en": [
-        "Aomori Prefectural Library Digital Archive"
-    ],
-    "source_ja": [
-        "青森県立図書館デジタルアーカイブ"
-    ],
-    "source_uri": [
-        "https://jpsearch.go.jp/entity/chname/青森県立図書館デジタルアーカイブ"
-    ],
-    "temporal_en": [
-        "1717"
-    ],
-    "temporal_ja": [
-        "1717年"
-    ],
-    "temporal_uri": [
-        "https://jpsearch.go.jp/entity/time/1717"
-    ],
-    "type_en": [
-        "Book"
-    ],
-    "type_ja": [
-        "図書"
-    ],
-    "type_uri": [
-        "https://jpsearch.go.jp/term/type/図書"
-    ]
+    "id" : "aomori-R100000101_I000000176_00",
+    "rdf": {
+        "access_en": [
+            "Aomori Prefectural Library"
+        ],
+        "access_ja": [
+            "青森県立図書館"
+        ],
+        "access_uri": [
+            "https://jpsearch.go.jp/entity/chname/青森県立図書館"
+        ],
+        "agential_en": [
+            "田中唯五郎(佳政)",
+            "小林宗五郎"
+        ],
+        "agential_ja": [
+            "田中唯五郎(佳政)",
+            "小林宗五郎"
+        ],
+        "agential_uri": [
+            "https://jpsearch.go.jp/entity/ncname/田中唯五郎(佳政)",
+            "https://jpsearch.go.jp/entity/ncname/小林宗五郎"
+        ],
+        "inLanguage_en": [
+            "Japanese"
+        ],
+        "inLanguage_ja": [
+            "日本語"
+        ],
+        "inLanguage_uri": [
+            "http://id.loc.gov/vocabulary/iso639-2/jpn"
+        ],
+        "itemLocation_en": [
+            "Aomori"
+        ],
+        "itemLocation_ja": [
+            "青森県"
+        ],
+        "itemLocation_uri": [
+            "https://jpsearch.go.jp/entity/place/青森"
+        ],
+        "source_en": [
+            "Aomori Prefectural Library Digital Archive"
+        ],
+        "source_ja": [
+            "青森県立図書館デジタルアーカイブ"
+        ],
+        "source_uri": [
+            "https://jpsearch.go.jp/entity/chname/青森県立図書館デジタルアーカイブ"
+        ],
+        "temporal_en": [
+            "1717"
+        ],
+        "temporal_ja": [
+            "1717年"
+        ],
+        "temporal_uri": [
+            "https://jpsearch.go.jp/entity/time/1717"
+        ],
+        "type_en": [
+            "Book"
+        ],
+        "type_ja": [
+            "図書"
+        ],
+        "type_uri": [
+            "https://jpsearch.go.jp/term/type/図書"
+        ]
+    }
 }

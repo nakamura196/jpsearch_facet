@@ -1,86 +1,89 @@
 {
-    "access_en": [
-        "Keio University Media Center"
-    ],
-    "access_ja": [
-        "慶應義塾大学メディアセンター"
-    ],
-    "access_uri": [
-        "https://jpsearch.go.jp/entity/chname/慶應義塾大学メディアセンター"
-    ],
-    "agential_en": [
-        "子卿",
-        "Fukuzawa, Yukichi",
-        "快堂蔵板"
-    ],
-    "agential_ja": [
-        "子卿",
-        "福沢諭吉",
-        "快堂蔵板"
-    ],
-    "agential_uri": [
-        "https://jpsearch.go.jp/entity/ncname/子卿",
-        "https://jpsearch.go.jp/entity/chname/福沢諭吉",
-        "https://jpsearch.go.jp/entity/ncname/快堂蔵板"
-    ],
-    "inLanguage_en": [
-        "Chinese",
-        "Japanese",
-        "English"
-    ],
-    "inLanguage_ja": [
-        "中国語",
-        "日本語",
-        "英語"
-    ],
-    "inLanguage_uri": [
-        "http://id.loc.gov/vocabulary/iso639-2/chi",
-        "http://id.loc.gov/vocabulary/iso639-2/jpn",
-        "http://id.loc.gov/vocabulary/iso639-2/eng"
-    ],
-    "isPartOf_en": [
-        "Digital Library of Yukichi Fukuzawa's Work"
-    ],
-    "isPartOf_ja": [
-        "デジタルで読む福澤諭吉"
-    ],
-    "isPartOf_uri": [
-        "http://dcollections.lib.keio.ac.jp/ja/fukuzawa"
-    ],
-    "itemLocation_en": [
-        "Tokyo"
-    ],
-    "itemLocation_ja": [
-        "東京都"
-    ],
-    "itemLocation_uri": [
-        "https://jpsearch.go.jp/entity/place/東京"
-    ],
-    "source_en": [
-        "Digital Collections of Keio University Libraries"
-    ],
-    "source_ja": [
-        "慶應義塾大学メディアセンター デジタルコレクション"
-    ],
-    "source_uri": [
-        "https://jpsearch.go.jp/entity/chname/慶應デジタルコレクション"
-    ],
-    "temporal_en": [
-        "1860"
-    ],
-    "temporal_ja": [
-        "1860年"
-    ],
-    "temporal_uri": [
-        "https://jpsearch.go.jp/entity/time/1860"
-    ],
-    "type_en": [
-        "Old Material"
-    ],
-    "type_ja": [
-        "古書・古文書"
-    ],
-    "type_uri": [
-        "https://jpsearch.go.jp/term/type/古書・古文書"
-    ]
+    "id" : "keio-R100000100_I000000001_00",
+    "rdf": {
+        "access_en": [
+            "Keio University Media Center"
+        ],
+        "access_ja": [
+            "慶應義塾大学メディアセンター"
+        ],
+        "access_uri": [
+            "https://jpsearch.go.jp/entity/chname/慶應義塾大学メディアセンター"
+        ],
+        "agential_en": [
+            "子卿",
+            "Fukuzawa, Yukichi",
+            "快堂蔵板"
+        ],
+        "agential_ja": [
+            "子卿",
+            "福沢諭吉",
+            "快堂蔵板"
+        ],
+        "agential_uri": [
+            "https://jpsearch.go.jp/entity/ncname/子卿",
+            "https://jpsearch.go.jp/entity/chname/福沢諭吉",
+            "https://jpsearch.go.jp/entity/ncname/快堂蔵板"
+        ],
+        "inLanguage_en": [
+            "Chinese",
+            "Japanese",
+            "English"
+        ],
+        "inLanguage_ja": [
+            "中国語",
+            "日本語",
+            "英語"
+        ],
+        "inLanguage_uri": [
+            "http://id.loc.gov/vocabulary/iso639-2/chi",
+            "http://id.loc.gov/vocabulary/iso639-2/jpn",
+            "http://id.loc.gov/vocabulary/iso639-2/eng"
+        ],
+        "isPartOf_en": [
+            "Digital Library of Yukichi Fukuzawa's Work"
+        ],
+        "isPartOf_ja": [
+            "デジタルで読む福澤諭吉"
+        ],
+        "isPartOf_uri": [
+            "http://dcollections.lib.keio.ac.jp/ja/fukuzawa"
+        ],
+        "itemLocation_en": [
+            "Tokyo"
+        ],
+        "itemLocation_ja": [
+            "東京都"
+        ],
+        "itemLocation_uri": [
+            "https://jpsearch.go.jp/entity/place/東京"
+        ],
+        "source_en": [
+            "Digital Collections of Keio University Libraries"
+        ],
+        "source_ja": [
+            "慶應義塾大学メディアセンター デジタルコレクション"
+        ],
+        "source_uri": [
+            "https://jpsearch.go.jp/entity/chname/慶應デジタルコレクション"
+        ],
+        "temporal_en": [
+            "1860"
+        ],
+        "temporal_ja": [
+            "1860年"
+        ],
+        "temporal_uri": [
+            "https://jpsearch.go.jp/entity/time/1860"
+        ],
+        "type_en": [
+            "Old Material"
+        ],
+        "type_ja": [
+            "古書・古文書"
+        ],
+        "type_uri": [
+            "https://jpsearch.go.jp/term/type/古書・古文書"
+        ]
+    }
 }
