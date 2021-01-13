@@ -33,6 +33,12 @@ python 300_create_batch.py
 ```
 `201_batches.sh` が更新されます。
 
+また、以下を実行することで、`settings.yml` をRDFストアから一括更新できます。その後、上記を実行して、`201_batches.sh` を更新してください。
+
+```
+python 301_update_settings.py
+```
+
 ## 説明
 
 出力ファイルの項目は以下の通りです。

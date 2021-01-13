@@ -1,9 +1,17 @@
+TheMeijiPeriodonFilm: 映像でみる明治の日本
+jafc: 日本アニメーション映画クラシックス
+sdcommons_video: 信州デジタルコモンズ映像記録
 iwate: イーハトーブ岩手電子図書館
+maibun: 三重県埋蔵文化財センター所蔵品
+waseda_enpaku_002: 早稲田演博3Dデータベース
 rih05: 生態史写真資料
 kennai: 三重県内の博物館資料館
 nin03: 日本言語地図
 kuhi: 三重県内の句碑
+bunkazai_video: 文化財動画ライブラリー
 nin02: 方言文法全国地図
+saiku: 斎宮歴史博物館所蔵品
+miemu03: 三重県総合博物館所蔵品(写真・映像)
 Nhikie: 蚕織錦絵コレクション
 machihaku: 三重県まちかど博物館
 aomori: 青森県立図書館デジタルアーカイブ
@@ -22,6 +30,7 @@ keio: 慶應デジタルコレクション
 irc04: 季語検索
 shisan: 三重の歴史文化散策マップ
 sapporo: 札幌市中央図書館デジタルライブラリー
+artmuse: 三重県立美術館所蔵品
 nij06: 欧州所在日本古書総合目録
 nfad: NFAJ所蔵映画フィルム検索システム
 apmoa_mapps: 愛知県美術館コレクション
@@ -33,19 +42,21 @@ nij04: 二十一代集データベース
 nij02: 吾妻鏡データベース
 syozo: 国立美術館所蔵作品総合目録
 nij03: 絵入源氏物語
-# nij14: 連歌・演能・雅楽データベース
-# nij18: 歴史物語データベース
-# exhib: アートコモンズ
-# miyagi: 叡智の杜Web(宮城県図書館)
-# nij11: 明治期出版広告データベース
-# adeac: ADEAC
-# FishPix: 魚類写真資料データベース
-# cobas: ColBase
-# arc_nishikie: ARC浮世絵ポータル
-# utokyo_da: 東京大学学術資産アーカイブズ
-# arc_books: ARC古典籍ポータル
-# nmj01: 歴博館蔵資料目録
-# dignl: NDLデジタルコレクション
-# najda: 国立公文書館デジタルアーカイブ
-# s_net: サイエンスミュージアムネット
-# bibnl: 全国書誌
+nij14: 連歌・演能・雅楽データベース
+nij18: 歴史物語データベース
+exhib: アートコモンズ
+miemu02: 三重県総合博物館所蔵品(人文)
+miyagi: 叡智の杜Web(宮城県図書館)
+nij11: 明治期出版広告データベース
+cria: にいがた地域映像アーカイブ
+adeac: ADEAC
+FishPix: 魚類写真資料データベース
+cobas: ColBase
+arc_nishikie: ARC浮世絵ポータル
+utokyo_da: 東京大学学術資産アーカイブズ
+arc_books: ARC古典籍ポータル
+nmj01: 歴博館蔵資料目録
+dignl: NDLデジタルコレクション
+najda: 国立公文書館デジタルアーカイブ
+s_net: サイエンスミュージアムネット
+bibnl: 全国書誌
